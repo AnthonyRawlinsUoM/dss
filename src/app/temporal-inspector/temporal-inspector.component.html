@@ -1,0 +1,61 @@
+<!-- start: grid -->
+<div class="ui menu">
+  <h2 class="ui header">Temporal Inspector - {{metric$}}</h2>
+  <a class="item" (click)="leftMapSidebar.toggle()">
+    <i class="sidebar icon"></i> Queries
+  </a>
+  <a class="item" (click)="rightMapSidebar.toggle()">
+    <i class="sidebar icon"></i> Tasks
+  </a>
+</div>
+<div class="ui compact grid">
+  <!-- start: row -->
+  <div class="row">
+    <!-- start: column -->
+    <div class="ui twelve wide column">
+
+      <sui-sidebar-container class="ui borderless segment">
+        <sui-sidebar class="inverted horizontal" #rightMapSidebar>
+
+          <app-task-list></app-task-list>
+
+        </sui-sidebar>
+        <sui-sidebar-sibling [isDimmedWhenVisible]="true">
+          <sui-sidebar-container class="ui borderless segment">
+            <sui-sidebar class="inverted horizontal" #leftMapSidebar>
+
+              <div class="ui wider vertical segments">
+
+                <app-spatio-temporal-query-form></app-spatio-temporal-query-form>
+                <app-query-view></app-query-view>
+                <app-query-results-view></app-query-results-view>
+
+              </div>
+
+            </sui-sidebar>
+            <sui-sidebar-sibling [isDimmedWhenVisible]="false">
+
+              <div class="ui important message">
+                <p>Plotting function goes here</p>
+              </div>
+              <div class="ui segment plotting"></div>
+
+            </sui-sidebar-sibling>
+          </sui-sidebar-container>
+
+        </sui-sidebar-sibling>
+      </sui-sidebar-container>
+
+    </div>
+    <div class="ui four wide column">
+
+      <div class="ui segment">
+        <app-metrics-view></app-metrics-view>
+      </div>
+      <!-- <div class="ui attached segment">
+        <app-projects-collection></app-projects-collection>
+      </div> -->
+
+    </div><!-- end: column -->
+  </div><!-- end: row -->
+</div><!-- end: grid -->

@@ -1,0 +1,42 @@
+<div class="ui grid">
+  <div class="ui row">
+    <div class="ui four wide column">
+      <div class="ui segment">
+        <h3 class="ui header">Choose Metrics to compare:</h3>
+        <sui-accordion [closeOthers]="false">
+
+          <sui-accordion-panel
+              *ngFor="let p of projects"
+              [isOpen]="true"
+          >
+            <div title>
+              <i class="dropdown icon"></i>
+              {{p.name}}
+            </div>
+            <div content>
+              <div class="fields">
+                <div
+                    *ngFor="let m of p.metrics"
+                    class="field"
+                >
+
+                  <sui-checkbox
+                      class="toggle"
+                      [(ngModel)]="m.active"
+                      (checkChange)="dataRefresh($event)"
+                  >{{m.metric}}</sui-checkbox>
+
+                </div>
+              </div>
+            </div>
+          </sui-accordion-panel>
+
+        </sui-accordion>
+      </div>
+    </div>
+    <div class="ui twelve wide column">
+      <app-polar-chart [source]="test_data" [chart_title]="chart_title" #polar></app-polar-chart>
+      <app-raw-json-view [data]="{title: chart_title, chart_data: test_data}" #rawjson></app-raw-json-view>
+    </div>
+  </div>
+</div>

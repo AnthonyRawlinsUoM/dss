@@ -1,0 +1,135 @@
+<div class="ui large vertical very relaxed divided list">
+  <div
+      class="ui inverted grey segment "
+      *ngFor="let ec of ecfs"
+  >
+    <i class="ui huge white file alternate icon"></i>
+    <div class="ui header">{{ ec.name }}</div>
+    <div class="ui content">
+      <div class="ui segment">
+        <div class="ui header">Extractions</div>
+        <!-- {{ ec.extractions | json }} -->
+
+        <sui-multi-select
+            [(ngModel)]="ec.extractions.active"
+            [options]="ec.extractions.inactive"
+            labelField="name"
+            [maxSelected]="6"
+            icon="list"
+            (ngModelChange)="onExtractionsChange($event)"
+            #activeExtractions
+        >
+          <div class="ui icon search input">
+            <i class="search icon"></i>
+            <input
+                suiSelectSearch
+                type="text"
+                placeholder="Search options..."
+            >
+          </div>
+          <div class="divider"></div>
+          <div class="header">
+            <i class="large list icon"></i>Extractions
+          </div>
+          <div class="scrolling menu">
+            <sui-select-option
+                *ngFor="let o of activeExtractions.filteredOptions"
+                [value]="o"
+            ></sui-select-option>
+          </div>
+        </sui-multi-select>
+
+      </div>
+      <div class="ui form segment">
+        <div class="ui header">Settings</div>
+
+
+        <div class="ui relaxed fieldset">
+          <div class="ui field">
+              <div class="ui labeled fluid input">
+                <div class="ui label">Input</div>
+                <input
+                    type="file"
+                    (change)="selectPath($event)"
+                >
+              </div>
+              
+            <div class="ui labeled fluid input">
+              <div class="ui label">Path</div>
+              <input
+                  type="text"
+                  value="{{ec.settings.input_path}}"
+              >
+            </div>
+            
+          </div>
+          <div class="ui field">
+            <div class="ui labeled fluid input">
+              <div class="ui label">Frappe Output Path</div>
+              <input
+                  type="text"
+                  value="{{ec.settings.frappe_output}}"
+              >
+            </div>
+          </div>
+          <div class="ui field">
+            <div class="ui labeled fluid input">
+              <div class="ui label">Output Path</div>
+              <input
+                  type="text"
+                  value="{{ec.settings.output_path}}"
+              >
+            </div>
+          </div>
+          <div class="ui field">
+            <div class="ui right labeled fluid input">
+              <input
+                  type="text"
+                  placeholder="Output Filename & Format"
+                  [(ngModel)]="ec.settings.name"
+              >
+
+              <sui-select
+                  class="label"
+                  [(ngModel)]="ec.settings.extension"
+                  labelField="extension"
+                  [options]="all_formats"
+                  [isSearchable]="true"
+                  placeholder="Select Format"
+                  #formatSelect
+              >
+                <sui-select-option
+                    *ngFor="let o of formatSelect.filteredOptions"
+                    [value]="o"
+                ></sui-select-option>
+              </sui-select>
+
+
+            </div>
+          </div>
+          <div class="ui right labeled fluid input">
+            <sui-checkbox class="toggle" [(ngModel)]="ec.settings.overwrite">Overwite?</sui-checkbox>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ui segment">
+        <div class="ui header">Options</div>
+        <div class="ui vertical list">
+            <div class="ui header item">Levels</div>
+          <div class="ui item" *ngFor="let lvls of ec.options.levels">
+            <sui-checkbox class="toggle"
+            >{{lvls}}</sui-checkbox>
+          </div>
+        </div>
+      </div>
+      <div class="ui segment">
+        <div class="ui header">Metadata</div>
+        <div class="ui label">Requested on: {{ ec.meta.requested_on | date }}</div>
+        <div class="ui label">Requested by: {{ ec.meta.requested_by }}</div>
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="ui header">
+There are {{ sample_data.length }} valid DSS files.
+</div>
+<div class="ui middle aligned very relaxed divided list">
+    <div class="ui item" *ngFor="let file of sample_data">
+        <div class="small right floated content">
+            {{file.last_modified}}
+        </div>
+        <i class="ui big grey file icon"></i>
+        <div class="content">
+            <div class="header">{{file.name}}</div>
+            <div class="description">
+                {{ file.extracted.length }} Analyses:
+                <ul>
+                    <li *ngFor="let m of file.extracted">{{m.project}}
+                        <ul>
+                            <li *ngFor="let metric of m.metrics">{{metric}}</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

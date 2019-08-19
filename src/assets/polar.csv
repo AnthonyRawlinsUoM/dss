@@ -1,0 +1,9 @@
+houses_exposed, PB_0, 1, 3, 2
+houses_lost, PB_0, 1, 3, 2
+people_exposed, PB_0, 1, 3, 2
+people_lost_ratio_method, PB_0, 1, 35, 2
+people_lost_harris_method, PB_0, 1, 3, 2
+power_lines, PB_0, 1, 3, 2
+carbon, PB_0, 1, 3, 2
+veg_cells, PB_0, 1, 3, 2
+power_lines, PB_0, 1, 3, 2

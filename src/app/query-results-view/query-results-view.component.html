@@ -1,0 +1,14 @@
+<div class="ui bottom attached placeholder segment" *ngIf="results.length == 0">
+  <div class="image header">
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</div>
+<div class="ui attached segment" *ngIf="partial_results.length > 0">
+  <h3 class="ui header">Partial Results</h3>
+  <pre>{{ partial_results | json }}</pre>
+</div>
+<div class="ui bottom attached segment" *ngIf="results.length > 0">
+  <h3 class="ui header">Complete Results</h3>
+  <pre>{{ results | json }}</pre>
+</div>

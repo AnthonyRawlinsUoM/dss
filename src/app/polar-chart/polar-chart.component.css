@@ -1,0 +1,38 @@
+#myChart {
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+
+/*jqxChart Style*/
+.jqx-chart-axis-text,
+.jqx-chart-label-text,
+.jqx-chart-tooltip-text,
+.jqx-chart-legend-text
+{
+    fill: #EEEEEE;
+    color: #EEEEEE;
+    font-size: 1rem;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+.jqx-chart-axis-description
+{
+    fill: #555555;
+    color: #555555;
+    font-size: 1rem;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+.jqx-chart-title-text
+{
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+.jqx-chart-title-description
+{
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}

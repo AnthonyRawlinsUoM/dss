@@ -1,1 +1,292 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~mapbox-gl/dist/mapbox-gl.css";
+/* @import "~@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"; */
+
+/* .plotting {
+  background-color: rgb(128,128,128) !important;
+} */
+
+.viridis6>:nth-child(n+2).label  {
+  background-color: #440154 !important;
+  color: #FFFFFF;
+}
+.viridis6>:nth-child(n+3).label  {
+  background-color: #443983 !important;
+  color: #FFFFFF;
+}
+.viridis6>:nth-child(n+4).label  {
+  background-color: #31688e !important;
+  color: #FFFFFF;
+}
+.viridis6>:nth-child(n+5).label  {
+  background-color: #21918c !important;
+  color: #FFFFFF;
+}
+.viridis6>:nth-child(n+6).label {
+  background-color: #90d743 !important;
+  color: #FFFFFF;
+}
+.viridis6>:nth-child(n+7).label  {
+  background-color: #fde725 !important;
+  color: #000000;
+}
+
+
+/* ["#440154", "#3b528b", "#21918c", "#5ec962", "#fde725"]  */
+.viridis5>:nth-child(n+2).label  {
+  background-color: #440154 !important;
+  color: #FFFFFF;
+}
+.viridis5>:nth-child(n+3).label  {
+  background-color: #3b528b !important;
+  color: #FFFFFF;
+}
+.viridis5>:nth-child(n+4).label  {
+  background-color: #21918c !important;
+  color: #FFFFFF;
+}
+.viridis5>:nth-child(n+5).label  {
+  background-color: #5ec962 !important;
+  color: #FFFFFF;
+}
+.viridis5>:nth-child(n+6).label {
+  background-color: #fde725 !important;
+  color: #000000;
+}
+
+
+/* ["#440154", "#31688e", "#35b779", "#fde725"] */
+.viridis4>:nth-child(n+2).label  {
+  background-color: #440154 !important;
+  color: #FFFFFF;
+}
+.viridis4>:nth-child(n+3).label  {
+  background-color: #31688e !important;
+  color: #FFFFFF;
+}
+.viridis4>:nth-child(n+4).label {
+  background-color: #35b779 !important;
+  color: #FFFFFF;
+}
+.viridis4>:nth-child(n+5).label {
+  background-color: #fde725 !important;
+  color: #000000;
+}
+
+
+/* ["#440154", "#21918c", "#fde725"] */
+.viridis3>:nth-child(n+2).label  {
+  background-color: #440154 !important;
+  color: #FFFFFF;
+}
+.viridis3>:nth-child(n+3).label  {
+  background-color: #21918c !important;
+  color: #FFFFFF;
+}
+.viridis3>:nth-child(n+4).label  {
+  background-color: #fde725 !important;
+  color: #000000;
+}
+
+
+
+
+/* ["#440154", "#fde725"] */
+.viridis2>:nth-child(n+2).label  {
+  background-color: #440154 !important;
+  color: #FFFFFF;
+}
+.viridis2>:nth-child(n+3).label {
+  background-color: #fde725 !important;
+  color: #000000;
+}
+
+
+
+/* .viridis.ui.multiple.dropdown>:nth-child(n+0).label  {
+  background-color: #440154 !important;
+  color: #FFFFFF;
+}
+.viridis.ui.multiple.dropdown>:nth-child(n+1).label  {
+  background-color: #440154 !important;
+  color: #FFFFFF;
+}
+.viridis.ui.multiple.dropdown>:nth-child(n+2).label  {
+  background-color: #443983 !important;
+  color: #FFFFFF;
+}
+.viridis.ui.multiple.dropdown>:nth-child(n+3).label  {
+  background-color: #31688e !important;
+  color: #FFFFFF;
+}
+.viridis.ui.multiple.dropdown>:nth-child(n+4).label  {
+  background-color: #21918c !important;
+  color: #FFFFFF;
+}
+.viridis.ui.multiple.dropdown>:nth-child(n+5).label {
+  background-color: #90d743 !important;
+  color: #FFFFFF;
+}
+.viridis.ui.multiple.dropdown>:nth-child(n+6).label  {
+  background-color: #fde725 !important;
+  color: #000000;
+} */
+
+.inverted .jqx-rangeselector-ticks-container {
+  box-shadow: 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.51) inset !important;
+  border: solid 2px rgba(89, 89, 89, 1);
+  border-radius: 0.36rem !important;
+  padding-right: 1px;
+}
+
+.inverted .jqx-widget {
+  background-color: #1B1C1D;
+}
+.inverted .jqx-rangeselector {
+}
+
+.inverted .jqx-rangeselector-slider {
+  cursor: pointer;
+}
+/* applied to RangeSelector widget. */
+.inverted * .jqx-rangeselector-slider.jqx-scrollbar-thumb-state-normal {
+  background-color: #404788 !important;
+  box-shadow: 0rem 0.45rem 0.15rem #29AF7F inset !important;
+  opacity: 0.86 !important;
+
+  /* border-radius: 0.32rem !important; */
+  /* box-shadow: 0px 0px 10px 1px rgba(12, 196, 245, 1) !important; */
+  /* border: solid 2px rgba(0, 70, 89, 1) !important; */
+}
+/* applied to RangeSelector's Slider element. */
+.inverted .jqx-rangeselector-shutter {
+}
+/* applied to the areas which are situated on the Left and Right side of the Slider. */
+.inverted .jqx-scrollbar-state-normal {
+  background-color: rgba(46, 46, 46, 0.85);
+}
+/* applied to the areas which are situated on the Left and Right side of the Slider. */
+.inverted .jqx-rangeselector-markers {
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0rem 0.25rem 0.55rem rgba(0, 0, 0, 0.80) !important;
+  border-radius: 0.245rem 0.245rem 0 0;
+  color: rgba(255, 255, 255, 1) !important;
+}
+/* applied to RangeSelector's Left and Right markers. */
+.inverted .jqx-fill-state-normal {
+  border-color: rgba(0, 0, 0, 1);
+}
+/* applied to RangeSelector's Left and Right markers. */
+.inverted .jqx-fill-state-hover {
+}
+/* applied to RangeSelector's Left and Right markers on Hover. */
+.inverted .jqx-fill-state-pressed {
+}
+/* applied to RangeSelector's Left and Right markers on Drag. */
+
+.inverted .jqx-rangeselector-markers {
+  opacity: 1.0 !important;
+}
+
+.inverted .jqx-rangeselector-markers-value {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1) !important;
+}
+/* applied to the element which displays the value in the markers. */
+.inverted .jqx-rangeselector-marker-arrow {
+}
+/* applied to the Left and Right marker arrows. */
+.inverted .jqx-rangeselector-marker-left-arrow {
+}
+/* applied to the Left marker arrow. */
+.inverted .jqx-rangeselector-marker-right-arrow {
+}
+/* applied to the Right marker arrow. */
+.inverted .jqx-rangeselector-marker-arrow-bottom {
+}
+/* applied to the markers markersPosition is set to "bottom" */
+.inverted .jqx-rangeselector-marker-arrow-top {
+}
+/* applied to the markers markersPosition is set to "top" */
+.inverted .jqx-rangeselector-labels {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+/* applied to RangeSelector's labels. */
+.inverted .jqx-rangeselector-group-labels {
+}
+/* applied to the Group labels. */
+.inverted .jqx-rangeselector-ticks {
+  background: rgba(255, 255, 255, 0.94) !important;
+  box-shadow: 0px 0px 10px 1px rgba(12, 196, 245, 1) !important;
+}
+/* applied to RangeSelector's ticks. */
+.inverted .jqx-fill-state-disabled {
+}
+/* applied to the RangeSelector when it is disabled. */
+
+.daterange {
+  max-width: 75vw;
+}
+
+.inverted .jqx-rangeselector-ticks-container, .inverted .jqx-rangeselector-slider {
+  width: 100%;
+}
+
+
+
+#myChart {
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+
+/*jqxChart Style*/
+.jqx-chart-axis-text,
+.jqx-chart-label-text, 
+.jqx-chart-tooltip-text, 
+.jqx-chart-legend-text
+{
+    fill: #EEEEEE !important;
+    color: #EEEEEE !important;
+    font-size: 1rem !important;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+.jqx-chart-axis-description
+{
+    fill: #555555 !important;
+    color: #555555 !important;
+    font-size: 0.9rem !important;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+.jqx-chart-title-text
+{
+    fill: #FFFFFF !important;
+    color: #FFFFFF !important;
+    font-size: 2rem  !important;
+    font-weight: bolder;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+.jqx-chart-title-description
+{
+    fill: #FFFFFF !important;
+    color: #FFFFFF !important;
+    font-size: 1.5rem  !important;
+    font-weight: normal;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+}
+
+.ui.dimmer>.content {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.ui.dimmer>.content>* {
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.ui.inverted.dimmer>.content>* {
+    color: #000;
+}

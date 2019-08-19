@@ -1,0 +1,6 @@
+[
+  { "name": "People", "id": "people" },
+  { "name": "Houses", "id": "house" },
+  { "name": "Infrastructure", "id": "inf" },
+  { "name": "Regional Economy", "id": "eco" },
+];

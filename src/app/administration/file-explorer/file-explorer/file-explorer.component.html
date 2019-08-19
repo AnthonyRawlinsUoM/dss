@@ -1,0 +1,25 @@
+<div class="ui menu">
+    <a class="ui item" *ngIf="canNavigateUp" (click)="navigateUp()">
+        <i class="class chevron up icon"></i>
+        
+    </a>
+    <div class="ui item">{{path || 'Files'}}</div>
+    <a class="ui item" (click)="openNewFolderDialog()">
+        <i class="icons">
+        <i class="ui folder icon"></i>
+        <i class="corner green add icon"></i>
+        </i>
+    </a>
+</div>
+
+<div class="container">
+    <div *ngFor="let element of fileElements">
+        <div 
+        (click)="navigate(element)"
+        (contextmenu)="openMenu($event, menuTrigger)">
+        <i class="ui huge folder alternate icon" *ngIf="element.isFolder"></i>
+        <i class="ui huge file alternate icon" *ngIf="!element.isFolder"></i>
+        </div>
+        {{element.name}}
+    </div>
+</div>

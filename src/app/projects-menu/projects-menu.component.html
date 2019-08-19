@@ -1,0 +1,16 @@
+<div class="ui pointing dropdown link item" suiDropdown>
+        Introspections
+        <i class="dropdown icon"></i>
+        <div class="menu" suiDropdownMenu>
+
+            <div class="header">Spatial</div>
+
+            <a *ngFor="let s of spatialProjects" class="item" routerLink="/spatial/{{s.name}}">{{s.name}}</a>
+
+            <div class="divider"></div>
+
+            <div class="header">Temporal</div>
+            <a *ngFor="let t of temporalProjects" class="item" routerLink="/temporal/{{t.name}}">{{t.name}}</a>
+
+        </div>
+    </div>

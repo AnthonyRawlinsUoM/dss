@@ -1,0 +1,63 @@
+<div class="ui raised segments">
+  <div class="ui inverted segment">
+    <h3 class="ui header">
+      <i class="ui inverted circular tasks icon"></i>
+      Task Monitor
+    </h3>
+    <h3 class="ui header">Priority Queue</h3>
+  </div>
+  <div class="ui inverted menu segment">
+    <!-- <a class="ui compact labeled icon item" (click)="()"><i class="ui add icon"></i> Add Dummy Task</a> -->
+    <a class="ui compact labeled icon item"><i class="ui chart line icon"></i> Results</a>
+    <a
+      class="ui compact labeled icon item"
+      (click)="purge()"
+    ><i class="ui trash alternate outline icon"></i> Flush All</a>
+    <div class="right menu">
+      <a
+        class="ui compact item"
+        (click)="sortDown()"
+      >
+        <span *ngIf="direction == 'UP'">
+          <i class="ui sort amount down grey icon"></i>
+        </span>
+        <span *ngIf="direction == 'DOWN'">
+          <i class="ui sort amount down active icon"></i>
+        </span>
+      </a>
+
+      <a
+        class="ui compact item"
+        (click)="sortUp()"
+      >
+        <span *ngIf="direction == 'UP'">
+          <i class="ui sort amount up active icon"></i>
+        </span>
+        <span *ngIf="direction == 'DOWN'">
+          <i class="ui sort amount up grey icon"></i>
+        </span>
+      </a>
+
+    </div>
+  </div>
+
+  <div
+    class="ui secondary inverted segment"
+    *ngIf="tasks.length > 0"
+    cdkDragLockAxis="y"
+    (cdkDropListDropped)="drop($event)"
+    cdkDropList
+  >
+    <div
+      class="task-box"
+      *ngFor="let t of tasks"
+      cdkDrag
+    >
+      <div
+        class="task-placeholder"
+        *cdkDragPlaceholder
+      ></div>
+      <app-task-view [task]="t"></app-task-view>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="ui menu">
+  <h3 class="header item">Charting options: </h3>
+  <sui-select
+      class="item"
+      [options]="seriesList"
+      placeholder="Type"
+      [(ngModel)]="selected_type"
+      (selectedOptionChange)="updateSelf()"
+      #filterSelect
+  >
+    <sui-select-option
+        *ngFor="let o of filterSelect.filteredOptions"
+        [value]="o"
+    ></sui-select-option>
+  </sui-select>
+  <a class="ui item" (click)="updateSelf()">Apply</a>
+</div>
+<jqxChart
+    #myChart
+    [width]="'calc(100%)'"
+    [height]="900"
+    [title]="chart_title"
+    [description]="'Source: Randomized data for testing only.'"
+    [showLegend]="true"
+    [enableAnimations]="true"
+    [padding]="padding"
+    [titlePadding]="titlePadding"
+    [source]="source"
+    [xAxis]="xAxis"
+    [seriesGroups]="seriesGroups"
+    [colorScheme]="'scheme01'"
+    [backgroundColor]="'rgb(128,128,128)'"
+>
+</jqxChart>

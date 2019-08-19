@@ -1,0 +1,176 @@
+<!-- START: RegimePicker -->
+<app-regime-picker
+    (regimeChange)="onRegimeChange($event)"
+    (metricChange)="onMetricChange($event)"
+    (scopeChange)="onScopeChange($event)"
+    [project]="project"
+    #regimePicker
+>
+</app-regime-picker>
+<!-- END: RegimePicker -->
+
+<!-- START: Menubar -->
+<div class="ui attached inverted menu">
+  <div class="ui header item ">Temporal Detail - {{project}}</div>
+  <a
+      class="item"
+      (click)="leftMapSidebar.toggle()"
+  >
+    <i class="sidebar icon"></i> Queries
+  </a>
+  <a
+      class="item"
+      (click)="rightMapSidebar.toggle()"
+  >
+    <i class="sidebar icon"></i> Tasks
+  </a>
+</div>
+<!-- END: menubar -->
+
+
+<!-- start: grid -->
+<div class="ui bottom attached compact grid">
+  <!-- start: row -->
+  <div class="row">
+    <!-- start: column -->
+    <div class="ui column">
+
+      <sui-sidebar-container class="ui borderless segment">
+        <sui-sidebar
+            class="inverted horizontal"
+            #rightMapSidebar
+        >
+          <app-task-list></app-task-list>
+        </sui-sidebar>
+        <sui-sidebar-sibling [isDimmedWhenVisible]="true">
+          <sui-sidebar-container class="ui borderless segment">
+            <sui-sidebar
+                class="inverted horizontal"
+                #leftMapSidebar
+            >
+              <div class="ui wider vertical segments">
+                <app-spatio-temporal-query-form></app-spatio-temporal-query-form>
+                <app-query-view></app-query-view>
+                <app-query-results-view></app-query-results-view>
+              </div>
+            </sui-sidebar>
+            <sui-sidebar-sibling [isDimmedWhenVisible]="false">
+              <div class="ui inverted grey segment">
+
+                <!-- <app-raw-json-view
+                  [data]="box_plot_data"
+                  #rawjson
+                ></app-raw-json-view> -->
+                
+                
+                <sui-tabset>
+                    <div class="ui top attached tabular menu">
+                        <a class="item" suiTabHeader="boxplot">Boxplot</a>
+                        <a class="item" suiTabHeader="linechart">Line Chart</a>
+                        <a class="item" *ngFor="let tab of tabs; let i = index" [suiTabHeader]="i" [(isActive)]="active[i]">{{ tab.header }}</a>
+                    </div>
+                    <div class="ui bottom attached segment" *ngFor="let tab of tabs; let i = index" [suiTabContent]="i">{{ tab.content }}</div>
+                    <div class="ui bottom attached segment" suiTabContent="boxplot">
+                        <app-boxplot
+                            [data]="box_plot_data"
+                            [colors]="colors"
+                            [project]="project"
+                            [metric]="metric.name"
+                            #boxplot
+                        ></app-boxplot>
+                    </div>
+                    <div class="ui bottom attached segment" suiTabContent="linechart">
+                        <app-time-series
+                            [seriesGroups]="time_series_data"
+                            [project]="project"
+                            [metric]="metric.name"
+                            #timeseries
+                        ></app-time-series>
+                    </div>
+                </sui-tabset>
+
+
+                
+
+                
+
+              </div>
+              <div class="ui bottom attached inverted segment">
+                <div class="ui divided grid">
+
+                  <div class="row">
+                    <div class="ui two wide right aligned column">
+                      <h3 class="ui inverted header">Aggregation</h3>
+                    </div>
+                    <div class="ui fourteen wide center aligned column"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="ui one wide right aligned column">
+                      <label class="ui inverted ">Time</label>
+                    </div>
+                    <div class="ui one wide right aligned column">
+
+                      <div class="field">
+                        <sui-checkbox
+                            class="toggle"
+                            [(ngModel)]="time_aggregation"
+                            suiPopup
+                            popupHeader="Temporal instrospection"
+                            popupText="The simulations are run over many years. You can choose to either aggregate the results, or select from a subset."
+                        ></sui-checkbox>
+                      </div>
+                    </div>
+                    <div class="ui fourteen wide left aligned column">
+                      <app-range-selector
+                          *ngIf="!time_aggregation"
+                          (rangeChange)="onTemporalRangeChange($event)"
+                          popupHeader="Batch introspection"
+                          popupText="The simulations are run in batches. You can choose to either aggregate the results, or select from a subset."
+                          #temporalRangeSelector
+                      ></app-range-selector>
+                      <div *ngIf="time_aggregation">
+                        You have chosen to aggregate the results over time.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="ui one wide right aligned column">
+                      <label class="ui inverted ">Batch</label>
+                    </div>
+                    <div class="ui one wide right aligned column">
+                      <div class="field">
+                        <sui-checkbox
+                            class="toggle"
+                            [(ngModel)]="batch_aggregation"
+                        ></sui-checkbox>
+                      </div>
+                    </div>
+                    <div class="ui fourteen wide left aligned column">
+
+
+                      <app-batch-reducer
+                          *ngIf="!batch_aggregation"
+                          [min]="0"
+                          [max]="100"
+                          [range]="batch_range"
+                          (batchRangeChange)="onBatchRangeChange($event)"
+                          #batchRangeReducer
+                      ></app-batch-reducer>
+
+                      <div *ngIf="batch_aggregation">
+                        You have chosen to aggregate the results over batches.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </sui-sidebar-sibling>
+          </sui-sidebar-container>
+
+        </sui-sidebar-sibling>
+      </sui-sidebar-container>
+
+    </div>
+  </div><!-- end: row -->
+</div><!-- end: grid -->

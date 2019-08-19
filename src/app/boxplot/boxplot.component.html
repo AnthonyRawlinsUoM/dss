@@ -1,0 +1,17 @@
+  <sui-dimmer
+      class="inverted"
+      [(isDimmed)]="isDimmed"
+      [isClickable]="false"
+  >
+    <div class="content">
+      <i class="ui huge loading circle notch icon"></i>
+      <p>Loading, please wait.</p>
+    </div>
+  </sui-dimmer>
+  
+  <h3 class="ui center aligned header">{{project}}: {{metric}} across Prescribed Burning Levels</h3>
+  <nvd3
+      [options]="options"
+      [data]="data"
+      #d3
+  ></nvd3>

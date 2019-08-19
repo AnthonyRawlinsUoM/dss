@@ -1,0 +1,15 @@
+<div class="ui icon message">
+    <i class="folder icon"></i>
+    <div class="content">
+        <div class="header">
+            Current Datasets
+        </div>
+        <p><strong>Frost</strong> outputs for introspection after Post-processing with <em>Frappenator</em></p>
+    </div>
+</div>
+<h3 class="ui header">Choose a run to continue:</h3>
+<!-- TREE View -->
+<div class="ui vertical pointing menu">
+    <a class="item" *ngFor="let f of foutputs" routerLink="{{'/frappe/' + f}}"><i class="ui folder outline icon"></i>{{ f }}</a>
+</div>
+

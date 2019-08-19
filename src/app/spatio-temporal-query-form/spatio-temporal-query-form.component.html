@@ -1,0 +1,20 @@
+<div class="ui top attached inverted segment">
+  <h3 class="ui header">
+    <i class="ui inverted circular tasks icon"></i>
+    SpatioTemporalQuery form</h3>
+  <div class="ui form">
+    <div class="ui field">
+      <label for="start"></label>
+      <input [(ngModel)]="start" />
+    </div>
+    <div class="ui field">
+      <label for="finish"></label>
+      <input [(ngModel)]="finish" />
+    </div>
+
+    <button
+      class="ui primary button"
+      (click)="validate_submit()"
+    >Submit</button>
+  </div>
+</div>

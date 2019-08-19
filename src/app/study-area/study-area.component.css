@@ -1,0 +1,10 @@
+.mapping {
+    min-height: 300px;
+}
+
+.ui.mapbox {
+    position: relative;
+    width:  100vw;
+    height: 95vh;
+    padding: 0em;
+}

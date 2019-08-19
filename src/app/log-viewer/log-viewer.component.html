@@ -1,0 +1,4 @@
+<div class="ui inverted segment" id="logger">
+    <button (click)="truncate()" class="ui secondary button"><i class="ui red close icon"></i>Clear Log</button>
+    <div *ngFor="let entry of log">{{entry}}</div>
+</div>

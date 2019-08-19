@@ -1,0 +1,101 @@
+<div class="ui segment">
+  <div class="ui form">
+    <div class="ui dividing header">Global Settings</div>
+    <div class="field">
+      <label>Root Folder</label>
+      <input
+          type="text"
+          name="config[root-folder]"
+          placeholder="root folder"
+      >
+    </div>
+  </div>
+</div>
+
+<div class="ui attached ordered equal width steps">
+  <div class="active step">
+    <div class="content">
+      <div class="title">Source Frappe</div>
+      <div class="description">Choose your Frappe Project source</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="content">
+      <div class="title">Configuration</div>
+      <div class="description">Configure the data required for the extraction</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="content">
+      <div class="title">Do Extraction</div>
+      <div class="description">Manage task progress</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="content">
+      <div class="title">Publish</div>
+      <div class="description">DSS data ready for introspection</div>
+    </div>
+  </div>
+</div>
+
+<div class="ui attached segment">
+  <div class="ui stackable grid">
+    <div class="ui four wide column">
+      <div class="ui top attached inverted blue menu">
+          <div class="ui item small header">Frappe Outputs</div>
+          <div class="ui right aligned item">
+          <div class="ui tiny buttons">
+            <button class="ui icon button"><i class="refresh icon"></i> Refresh</button>
+            <button class="ui icon button"><i class="add icon"></i> Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="ui bottom attached segment">
+        <app-frappe-collection></app-frappe-collection>
+      </div>
+    </div>
+
+    <div class="ui four wide column">
+      <div class="ui top attached inverted blue menu">
+          <div class="ui item small header">Importer Configs</div>
+          <div class="ui right aligned item">
+          <div class="ui tiny buttons">
+            <button class="ui icon button"><i class="refresh icon"></i> Refresh</button>
+            <button class="ui icon button"><i class="add icon"></i> Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="ui bottom attached segment">
+        <app-import-config-collection></app-import-config-collection>
+      </div>
+    </div>
+    <div class="ui four wide column">
+      <div class="ui top attached inverted blue menu">
+          <div class="ui item small header">Import Task Log</div>      
+          <div class="ui right aligned item">
+          <div class="ui tiny buttons">
+            <button class="ui icon button"><i class="refresh icon"></i> Refresh</button>
+            <button class="ui icon button"><i class="sort amount down icon"></i> Follow</button>
+          </div>
+          </div>
+      </div>
+      <div class="ui bottom attached segment">
+          <app-import-task-collection></app-import-task-collection>
+      </div>
+    </div>
+    <div class="ui four wide column">
+      <div class="ui top attached inverted blue menu">
+          <div class="ui item small header">DSS Files</div>
+          <div class="ui right aligned item">
+          <div class="ui tiny buttons">
+            <button class="ui icon button"><i class="refresh icon"></i> Refresh</button>
+          </div>
+          </div>
+      </div>
+      <div class="ui bottom attached segment">
+          <app-dss-file-collection></app-dss-file-collection>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<sui-dimmer
+    class="inverted"
+    [(isDimmed)]="isDimmed"
+    [isClickable]="false"
+>
+  <div class="content">
+    <i class="ui huge loading circle notch icon"></i>
+    <p>Loading, please wait.</p>
+  </div>
+</sui-dimmer>
+
+<jqxChart
+    #myChart
+    [width]="'calc(100%)'"
+    [height]="500"
+    [title]="'Time Series of ' + project"
+    [description]="'[Metric: ' + metric + ']'"
+    [showLegend]="true"
+    [enableAnimations]="true"
+    [padding]="padding"
+    [titlePadding]="titlePadding"
+    [source]="dataAdapter"
+    [xAxis]="xAxis"
+    [valueAxis]="valueAxis"
+    [seriesGroups]="seriesGroups"
+    [colorScheme]="'scheme04'"
+>
+</jqxChart>

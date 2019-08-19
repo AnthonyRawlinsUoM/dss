@@ -1,0 +1,46 @@
+<div [suiTransition]="transitionController">
+  <div class="ui horizontal segments raised segment">
+    <div class="ui center aligned compact tiny black inverted segment">
+      <i class="bars icon" cdkDragHandle></i>
+    </div>
+    <!-- <div class="ui left aligned fluid tiny segment">
+      <p>ID: {{task.uuid}}</p>
+    </div> -->
+    <div class="ui left aligned fluid segment">
+      <p>Submitted by: {{task.submitted_by}}</p>
+      <p>on: {{task.submitted_at }}</p>
+    </div>
+    <div *ngIf="task.status == 'PENDING'" class="ui compact center aligned segment"><i class="ui grey inbox icon"></i> Pending</div>
+    <div *ngIf="task.status == 'STARTED'" class="ui compact center aligned segment"><i class="ui blue cogs icon"></i> Started</div>
+    <div *ngIf="task.status == 'SUCCESS'" class="ui compact center aligned segment"><i class="ui green check icon"></i> Success</div>
+    <div *ngIf="task.status == 'FAILURE'" class="ui compact center aligned segment"><i class="ui red exclamation icon"></i> Failure</div>
+    <div *ngIf="task.status == 'RETRY'" class="ui compact center aligned segment"><i class="ui purple history icon"></i> Retry</div>
+    <div *ngIf="task.status == 'REVOKED'" class="ui compact center aligned segment"><i class="ui red ban icon"></i> Revoked</div>
+    <div class="ui right aligned compact secondary segment">
+
+      <!--  SUCCESS -->
+      <div *ngIf="task.status == 'SUCCESS'" class="ui tiny compact icon buttons">
+        <button class="ui green button" (click)="results()"><i class="line chart icon"></i></button>
+      </div>
+
+      <!-- PENDING or STARTED -->
+      <div *ngIf="task.status == 'STARTED' || task.status == 'PENDING'" class="ui tiny compact icon buttons">
+        <button class="ui orange button" (click)="advance()"><i class="clock icon"></i></button>
+        <button class="ui red button" (click)="revoke()"><i class="trash alternate icon"></i></button>
+      </div>
+
+      <!-- FAILURE -->
+      <div *ngIf="task.status == 'FAILURE'" class="ui tiny compact icon buttons">
+        <button class="ui green button" (click)="retry()"><i class="purple history icon"></i></button>
+        <button class="ui orange button" (click)="advance()"><i class="clock icon"></i></button>
+        <button class="ui red button" (click)="revoke()"><i class="trash alternate icon"></i></button>
+      </div>
+
+      <!-- REVOKED -->
+      <div *ngIf="task.status == 'REVOKED'" class="ui tiny compact icon buttons">
+        <button class="ui tiny red button disabled" (click)="revoke()"><i class="trash alternate icon"></i></button>
+      </div>
+    </div>
+    <sui-progress class="bottom attached indicating active" [value]="task.progress">{{task.progress}}%</sui-progress>
+  </div>
+</div>

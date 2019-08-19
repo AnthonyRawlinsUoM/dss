@@ -1,0 +1,39 @@
+<div class="ui segment">
+  <div class="ui top attached menu">
+    <div class="ui dropdown icon item" suiDropdown>
+      <i class="wrench icon"></i>
+      <div class="menu" suiDropdownMenu>
+        <div class="item">
+          <i class="dropdown icon"></i>
+          <span class="text">New</span>
+        </div>
+        <div class="divider"></div>
+        <div class="header">
+          Export
+        </div>
+        <a class="item" (click)="excelBtnOnClick()">Excel</a>
+        <a class="item" (click)="xmlBtnOnClick()">XML</a>
+        <a class="item" (click)="csvBtnOnClick()">CSV</a>
+        <a class="item" (click)="tsvBtnOnClick()">TSV</a>
+        <a class="item" (click)="htmlBtnOnClick()">HTML</a>
+        <a class="item" (click)="jsonBtnOnClick()">JSON</a>
+        <a class="item" (click)="pdfBtnOnClick()">PDF</a>
+
+      </div>
+    </div>
+  </div>
+  <div class="ui bottom attached segment">
+    <jqxGrid #myGrid [width]="getWidth()" [height]="350" [source]="dataAdapter" [columns]="columns" [columnsresize]="true" [sortable]="true" [altrows]="true" [selectionmode]="'multiplecellsadvanced'">
+    </jqxGrid>
+  </div>
+
+
+
+
+  <button class="ui button" (click)="addItemBtnOnClick()">Add Item</button>
+  <button class="ui button" (click)="deleteItemBtnOnClick()">Delete Item</button>
+  <button class="ui button" (click)="updateItemBtnOnClick()">Update Item</button>
+  <!-- <button style="float: left" (onClick)="updatePathBtnOnClick()">Update Path</button> -->
+
+  <div #log style="clear: both"></div>
+</div>

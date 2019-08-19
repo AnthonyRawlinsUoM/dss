@@ -1,0 +1,80 @@
+<div class="ui attached inverted menu">
+    
+  <div class="ui item fieldset"> Season:
+    <div class="ui field">
+      <div class="ui label">Wildfire:</div>
+      <sui-checkbox
+          class="inverted toggle"
+          [(ngModel)]="wildfire_season"
+          (checkChange)="onWildfireSeason($event)"
+      ></sui-checkbox>
+    </div>
+    <div class="ui field">
+      <div class="ui label">Prescribed:</div>
+      <sui-checkbox
+          class="inverted toggle"
+          [(ngModel)]="prescribed_season"
+          (checkChange)="onPrescribedSeason($event)"
+      ></sui-checkbox>
+    </div>
+  </div>
+  
+  <div class="ui field item">
+    <div class="ui label">Metric:</div>
+    <sui-select
+        class="floating labeled blue icon button"
+        [(ngModel)]="metric"
+        icon="filter"
+        labelField="name"
+        [options]="all_metrics"
+        [isSearchable]="true"
+        placeholder="Select Filter"
+        (selectedOptionChange)="onMetricChange($event)"
+        #filterSelect
+    >
+      <div class="header">
+        <i class="tags icon"></i>
+        Filter by metric
+      </div>
+      <sui-select-option
+          *ngFor="let o of filterSelect.filteredOptions"
+          [value]="o"
+      ></sui-select-option>
+    </sui-select>
+  </div>
+  
+  <div class="ui field item">
+    <div class="ui label">Regime:</div>
+    <sui-multi-select
+        [(ngModel)]="pb_levels"
+        [options]="regimes"
+        labelField="name"
+        [maxSelected]="6"
+        icon="list"
+        (ngModelChange)="onRegimeChange($event)"
+        [className]="'ui inverted dropdown viridis' + pb_levels.length"
+        #regimeSelect
+    >
+
+      <div class="ui icon search input">
+        <i class="search icon"></i>
+        <input
+            suiSelectSearch
+            type="text"
+            placeholder="Search options..."
+        >
+      </div>
+      <div class="divider"></div>
+      <div class="header">
+        <i class="large list icon"></i>Prescribed Burn Levels
+      </div>
+      <div class="scrolling menu">
+        <sui-select-option
+            *ngFor="let o of regimeSelect.filteredOptions"
+            [value]="o"
+            class="viridis"
+        ></sui-select-option>
+      </div>
+    </sui-multi-select>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<jqxRangeSelector #rangeSelector
+                  [width]="'calc(100% - 10rem)'"
+                  [height]="'1rem'"
+                  [min]="min"
+                  [max]="max"
+                  [range]="range"
+                  [labelsOnTicks]="true"
+                  [majorTicksInterval]="10"
+                  [minorTicksInterval]="1"
+                  [showGroupLabels]="true"
+
+                  (onChange)="update()" class="daterange">
+</jqxRangeSelector>
