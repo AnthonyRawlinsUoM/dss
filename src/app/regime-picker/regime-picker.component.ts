@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Input, Output, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SessionLogService } from '../session-log.service';
-import { SuiModule } from 'ng2-semantic-ui';
+import { SuiSelectModule } from 'ng2-semantic-ui';
 import { NthColorService } from '../nth-color.service';
 import { MetricService } from '../metric.service';
 
@@ -12,7 +12,7 @@ import { MetricService } from '../metric.service';
 })
 export class RegimePickerComponent implements OnInit {
 
-  @ViewChild('regimeSelect', { static: false }) regimeSelect: SuiSelectComponent;
+  @ViewChild('regimeSelect', { static: false }) regimeSelect: SuiSelect;
 
   @Input() project;
 

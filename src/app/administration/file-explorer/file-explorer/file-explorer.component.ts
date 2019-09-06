@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FileElement } from './model/file-element';
+import { FileElement } from '../model/file-element';
 
 @Component({
   selector: 'app-file-explorer',
@@ -26,7 +26,6 @@ export class FileExplorerComponent implements OnInit {
 
   ngOnInit() {
   }
-
   deleteElement(element: FileElement) {
     this.elementRemoved.emit(element);
   }

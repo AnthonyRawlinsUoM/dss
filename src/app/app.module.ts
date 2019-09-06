@@ -68,6 +68,7 @@ import { TimeBatchFilterPipe } from './time-batch-filter.pipe';
 import { TimeSeriesComponent } from './time-series/time-series.component';
 
 import { AdministrationModule } from './administration/administration.module';
+import { MatrixSelectionComponent } from './matrix-selection/matrix-selection.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -119,7 +120,8 @@ const appRoutes: Routes = [
     PolarChartComponent,
     OverviewComponent,
     TimeBatchFilterPipe,
-    TimeSeriesComponent
+    TimeSeriesComponent,
+    MatrixSelectionComponent
   ],
   imports: [
     BrowserModule,
