@@ -11,6 +11,7 @@ RUN npm install --no-optional
 
 # Deployment
 EXPOSE 3335
+EXPOSE 5050
 
 ENV TZ Australia/Melbourne
 

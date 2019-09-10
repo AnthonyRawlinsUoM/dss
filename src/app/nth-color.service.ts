@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 export class NthColorService {
 
   // private url = 'http://128.250.160.167:5050';
-  private url = 'http://localhost:5050';
+  private url = 'http://reactive:5050';
   private socket;
   // Example call http://localhost:8765/nmap?start=0&finish=5&cmap=VIRIDIS
 
