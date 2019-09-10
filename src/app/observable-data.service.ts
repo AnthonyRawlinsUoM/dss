@@ -10,8 +10,8 @@ import { SpatioTemporalQuery } from './spatio-temporal-query';
 })
 export class ObservableDataService {
 
-  private url = 'http://128.250.160.167:5050';
-  // private url = 'http://localhost:5050';
+  // private url = 'http://128.250.160.167:5050';
+  private url = 'http://localhost:5050';
   private socket;
 
   constructor() {
@@ -103,7 +103,8 @@ export class ObservableDataService {
     return Observable.create((observer) => {
       console.log('Got listing back.');
 
-      this.socket.on('datalist', (data) => {
+      this.socket.on('datapath_list', (data) => {
+        console.log(data);
         observer.next(data);
       });
     });

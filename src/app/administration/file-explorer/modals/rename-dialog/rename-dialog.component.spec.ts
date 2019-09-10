@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MatrixSelectionComponent } from './matrix-selection.component';
+import { RenameDialogComponent } from './rename-dialog.component';
 
-describe('MatrixSelectionComponent', () => {
-  let component: MatrixSelectionComponent;
-  let fixture: ComponentFixture<MatrixSelectionComponent>;
+describe('RenameDialogComponent', () => {
+  let component: RenameDialogComponent;
+  let fixture: ComponentFixture<RenameDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MatrixSelectionComponent ]
+      declarations: [ RenameDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MatrixSelectionComponent);
+    fixture = TestBed.createComponent(RenameDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

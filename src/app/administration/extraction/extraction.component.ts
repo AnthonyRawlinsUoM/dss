@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-extraction',
@@ -7,9 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ExtractionComponent implements OnInit {
 
-  @Input('ngModel') root_folder = '/nfs/pyromancer/Projects/DSS/data/Frappeator_Output/';
+  local = '/media/arawlins/Olympic/GENERIC/RxPyNode/ReactiveServer/src/assets/projects/';
+  base = '/nfs/pyromancer/Projects/DSS/data/Frappeator_Output/';
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

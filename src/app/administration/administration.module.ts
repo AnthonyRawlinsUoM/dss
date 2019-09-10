@@ -7,6 +7,8 @@ import { FrappeSectionModule } from './frappe-section/frappe-section.module';
 import { ImportTaskSectionModule } from './import-task-section/import-task-section.module';
 import { DssFileSectionModule } from './dss-file-section/dss-file-section.module';
 import { FileExplorerModule } from './file-explorer/file-explorer.module';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { FileExplorerModule } from './file-explorer/file-explorer.module';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ImportConfigSectionModule,
     FrappeSectionModule,
     ImportTaskSectionModule,

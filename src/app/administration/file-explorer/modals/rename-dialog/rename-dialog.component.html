@@ -1,0 +1,15 @@
+<div class="header">{{ modal.context.title }}</div>
+<div class="content">
+  <p>{{ modal.context.question }}</p>
+  <div class="ui form">
+    <div class="ui field">
+      <label>Folder name</label>
+      <input placeholder="Folder Name" [(ngModel)]="folderName" />
+    </div>
+  </div>
+</div>
+
+<div class="actions">
+  <button class="ui button" (click)="modal.deny(undefined)">Cancel</button>
+  <button class="ui primary button" (click)="modal.approve(undefined)" autofocus>OK</button>
+</div>

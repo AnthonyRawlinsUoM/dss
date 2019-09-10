@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DisclaimerService } from '../disclaimer.service';
 
 @Component({
   selector: 'app-disclaimer',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./disclaimer.component.css']
 })
 export class DisclaimerComponent implements OnInit {
-
-  constructor() { }
+  constructor(private disclaim: DisclaimerService) { }
 
   ngOnInit() {
   }
 
+  alert(ev) {
+    console.log(ev);
+  }
+
+  deny() {
+    this.disclaim.decline();
+  }
+
+  approve() {
+    this.disclaim.acknowledge();
+  }
 }

@@ -1,12 +1,13 @@
 <div class="ui segment">
   <div class="ui form">
     <div class="ui dividing header">Global Settings</div>
-    <div class="field">
-      <label>Root Folder</label>
-      <input
+    <div class="ui left labeled fluid input">
+
+        <div class="ui label">Root Folder</div>
+        <input
           type="text"
           name="config[root-folder]"
-          placeholder="root folder"
+          [(ngModel)]="base"
       >
     </div>
   </div>
@@ -72,7 +73,7 @@
     </div>
     <div class="ui four wide column">
       <div class="ui top attached inverted blue menu">
-          <div class="ui item small header">Import Task Log</div>      
+          <div class="ui item small header">Import Task Log</div>
           <div class="ui right aligned item">
           <div class="ui tiny buttons">
             <button class="ui icon button"><i class="refresh icon"></i> Refresh</button>

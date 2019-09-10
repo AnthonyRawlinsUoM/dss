@@ -16,6 +16,7 @@ export class FrappeCollectionComponent implements OnInit {
   ngOnInit() {
 
     this.ods.getFrappenatorOutput().subscribe((list) => {
+      console.log(list);
       this.foutputs = list;
     });
   }
