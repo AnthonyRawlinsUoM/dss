@@ -17,7 +17,7 @@ import { NvD3Module } from 'ng2-nvd3';
 import { ObservableDataService } from './observable-data.service';
 import { MetricService } from './metric.service';
 import { NthColorService } from './nth-color.service';
-
+import { DisclaimerService } from './disclaimer.service';
 
 /* jqxWidgets Modules */
 import { jqxGridModule } from 'jqwidgets-ng/jqxgrid';
@@ -149,7 +149,8 @@ const appRoutes: Routes = [
   providers: [
     ObservableDataService,
     MetricService,
-    NthColorService
+    NthColorService,
+    DisclaimerService
   ],
   bootstrap: [AppComponent]
 })

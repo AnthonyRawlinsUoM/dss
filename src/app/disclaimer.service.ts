@@ -10,7 +10,7 @@ export class DisclaimerService implements OnInit {
   acknowledged = 'UNKNOWN';
 
   constructor(private cookieJar: CookieService) {
-    if (!this.cookieJar.check('PBA_disclaimer')) {
+    if (!this.cookieJar.check('DSS_disclaimer')) {
       this.persist();
     }
   }
@@ -22,7 +22,7 @@ export class DisclaimerService implements OnInit {
   }
 
   public noticed() {
-    return (this.cookieJar.get('PBA_disclaimer') === 'TRUE');
+    return (this.cookieJar.get('DSS_disclaimer') === 'TRUE');
   }
 
   public acknowledge() {
@@ -37,6 +37,6 @@ export class DisclaimerService implements OnInit {
 
   private persist() {
     // Use PersistenceService to store cookie here
-    this.cookieJar.set('PBA_disclaimer', this.acknowledged);
+    this.cookieJar.set('DSS_disclaimer', this.acknowledged);
   }
 }
