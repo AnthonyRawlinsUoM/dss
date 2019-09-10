@@ -11,11 +11,13 @@ import { SpatioTemporalQuery } from './spatio-temporal-query';
 export class ObservableDataService {
 
   // private url = 'http://128.250.160.167:5050';
-  private url = 'http://reactive:5050';
+  private url = 'https://dss.cloud.bushfirebehaviour.net.au:5050'';
   private socket;
 
   constructor() {
-    this.socket = io(this.url);
+    this.socket = io(this.url, {
+      transports: ['websocket']
+    });
   }
 
   public requestData() { }

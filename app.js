@@ -47,11 +47,15 @@ const server = http.createServer(app);
 
 const io = socketIO(server);
 io.adapter(redisAdapter({
-  host: 'localhost',
+  host: 'mq',
   port: 6379
 }));
 
 const sioc = require('socket.io-client');
+
+api = sioc('http://localhost:5051', {
+  transports: ['websocket']
+});
 
 api = sioc('http://localhost:5051', {
   transports: ['websocket']
