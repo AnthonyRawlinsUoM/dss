@@ -10,7 +10,7 @@ const app = express();
 const uuidv4 = require('uuid/v4');
 const moment = require('moment');
 
-app.use(express.static(path.join(__dirname, 'dist/ReactiveServer')));
+app.use(express.static(path.join(__dirname, '/dist/ReactiveServer')));
 
 app.use(function (req, res, next) {
   app.use(function (req, res, next) {
@@ -35,7 +35,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/ReactiveServer/index.html'))
+  res.sendFile(path.join(__dirname, '/index.html'))
 });
 
 const port = process.env.PORT || '5050';
@@ -53,7 +53,7 @@ io.adapter(redisAdapter({
 
 const sioc = require('socket.io-client');
 
-api = sioc('http://localhost:5051', {
+api = sioc('stevejobs:5051', {
   transports: ['websocket']
 });
 

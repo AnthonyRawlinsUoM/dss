@@ -1,6 +1,6 @@
 {
   "name": "reactive-server",
-  "version": "0.0.11",
+  "version": "0.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,9 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "reactive": "node app.js --port 5050",
-    "serve": "node server.js --port 3335",
-    "dev": "npm-run-all --sequential reactive serve"
+    "reactive": "node app.js --port 5050"
   },
   "private": true,
   "dependencies": {
