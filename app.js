@@ -48,7 +48,7 @@ const server = http.createServer(app);
 const io = socketIO(server);
 io.adapter(redisAdapter({
   host: 'mq',
-  port: 6379
+  port: 6380
 }));
 
 const sioc = require('socket.io-client');
