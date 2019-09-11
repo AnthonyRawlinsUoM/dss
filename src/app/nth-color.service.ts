@@ -10,7 +10,7 @@ export class NthColorService {
 
   // private url = 'http://128.250.160.167:5050';
   // private url = 'localhost:5050';
-  private url = 'https://dss.cloud.bushfirebehaviour.net.au:5050';
+  private url = 'https://dss.cloud.bushfirebehaviour.net.au';
   private socket;
   // Example call http://localhost:8765/nmap?start=0&finish=5&cmap=VIRIDIS
 
