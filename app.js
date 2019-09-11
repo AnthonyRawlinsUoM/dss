@@ -10,7 +10,7 @@ const app = express();
 const uuidv4 = require('uuid/v4');
 const moment = require('moment');
 
-app.use(express.static(path.join(__dirname, 'dist/ReactiveServer/')));
+app.use(express.static(path.join(__dirname, 'static/')));
 
 app.use(function (req, res, next) {
   app.use(function (req, res, next) {
@@ -35,7 +35,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/ReactiveServer/index.html'))
+  res.sendFile(path.join(__dirname, 'static/index.html'))
 });
 
 const port = process.env.PORT || '5050';
@@ -47,7 +47,7 @@ const server = http.createServer(app);
 
 const io = socketIO(server);
 io.adapter(redisAdapter({
-  host: 'mq',
+  host: 'localhost',
   port: 6379
 }));
 
@@ -363,6 +363,7 @@ io.on('connection', (socket) => {
   //     io.emit('log', 'Got dss_frappe results: ' + data);
   //   });
   // });
+
   socket.on('frappe_results', (data) => {
     console.log('Summary request as follows:');
     console.log(data);

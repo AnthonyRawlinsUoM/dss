@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "reactive": "node app.js",
+    "reactive": "node app.js --host \"0.0.0.0\" --port 5050 --disableHostCheck",
     "dev": "npm-run-all --parallel start reactive"
   },
   "private": true,

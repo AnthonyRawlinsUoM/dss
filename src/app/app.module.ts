@@ -18,6 +18,7 @@ import { ObservableDataService } from './observable-data.service';
 import { MetricService } from './metric.service';
 import { NthColorService } from './nth-color.service';
 import { DisclaimerService } from './disclaimer.service';
+import { CookieService } from 'ngx-cookie-service';
 
 /* jqxWidgets Modules */
 import { jqxGridModule } from 'jqwidgets-ng/jqxgrid';
@@ -69,6 +70,7 @@ import { TimeBatchFilterPipe } from './time-batch-filter.pipe';
 import { TimeSeriesComponent } from './time-series/time-series.component';
 
 import { AdministrationModule } from './administration/administration.module';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -120,7 +122,8 @@ const appRoutes: Routes = [
     PolarChartComponent,
     OverviewComponent,
     TimeBatchFilterPipe,
-    TimeSeriesComponent
+    TimeSeriesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -150,7 +153,8 @@ const appRoutes: Routes = [
     ObservableDataService,
     MetricService,
     NthColorService,
-    DisclaimerService
+    DisclaimerService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
