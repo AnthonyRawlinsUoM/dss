@@ -8,14 +8,16 @@ import { Observable } from 'rxjs/Observable';
 export class MetricService {
 
   // private url = 'http://128.250.160.167:5050';
-  private url = 'localhost:5050';
+  // private url = 'localhost:5050';
+  private url = 'https://dss.cloud.bushfirebehaviour.net.au:5050';
 
   private socket;
 
   constructor() {
-    this.socket = io(this.url, {
-      transports: ['websocket']
-    });
+    // this.socket = io(this.url, {
+    //   transports: ['websocket']
+    // });
+    this.socket = io(this.url);
   }
 
   public getMetric(project: string) {
