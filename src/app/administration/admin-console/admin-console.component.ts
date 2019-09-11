@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ExtractionComponent } from '../extraction/extraction.component';
 import { FileElement } from '../file-explorer/model/file-element';
-import { ConfirmModal } from '../file-explorer/modals/confirm-modal';
 import { SuiModalService } from 'ng2-semantic-ui';
 import { FileService } from '../file-explorer/file.service';
 import { Observable } from 'rxjs/Observable';
