@@ -1,15 +1,16 @@
 {
   "name": "reactive-server",
-  "version": "0.0.9",
+  "version": "0.0.8",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host \"0.0.0.0\" --port 3335 --disableHostCheck",
+    "start": "ng serve",
+    "serve": "node server.js --port 3335",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "reactive": "node app.js --host \"0.0.0.0\" --port 5050 --disableHostCheck",
-    "dev": "npm-run-all --sequential build reactive start"
+    "reactive": "node app.js --port 5050",
+    "dev": "npm-run-all --sequential reactive start"
   },
   "private": true,
   "dependencies": {
