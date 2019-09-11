@@ -4,13 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "serve": "node server.js --port 3335",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "reactive": "node app.js --port 5050",
-    "dev": "npm-run-all --sequential reactive start"
+    "serve": "node server.js --port 3335",
+    "dev": "npm-run-all --sequential reactive serve"
   },
   "private": true,
   "dependencies": {
