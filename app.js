@@ -47,7 +47,7 @@ const server = http.createServer(app);
 
 const io = socketIO(server);
 io.adapter(redisAdapter({
-  host: 'localhost',
+  host: 'mq',
   port: 6379
 }));
 
