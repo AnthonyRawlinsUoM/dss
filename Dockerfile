@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 # RUN npm i -g npm
 
 COPY . .
-RUN npm install --no-optional
+#RUN npm install --no-optional
 
 # Deployment
 EXPOSE 3335
@@ -15,4 +15,4 @@ EXPOSE 5050
 
 ENV TZ Australia/Melbourne
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
