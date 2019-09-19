@@ -51,8 +51,14 @@ io.adapter(redisAdapter({
 
 const sioc = require('socket.io-client');
 
-api = sioc('stevejobs:5051', {
-  transports: ['websocket']
+const api = sioc('stevejobs:5051');
+
+api.on('connection', (socket) => {
+    console.log('API connected');
+    
+    socket.on('disconnect', function () {
+        console.log('API has disconnected');
+  });
 });
 
 io.on('connection', (socket) => {
@@ -65,7 +71,7 @@ io.on('connection', (socket) => {
   });
 
   io.emit('log', 'User with Session ID: ' + socket.id + ' has connected.');
-
+  api.emit('log', 'User with Session ID: ' + socket.id + ' has connected.');
   /* TASK CODE */
 
   // Add
