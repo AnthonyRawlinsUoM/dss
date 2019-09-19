@@ -42,16 +42,16 @@ const port = process.env.PORT || '5050';
 app.set('port', port);
 
 const server = http.createServer(app);
+const sioc = require('socket.io-client');
+const api = sioc('stevejobs:5051');
 
 const io = socketIO(server);
-io.adapter(redisAdapter({
-  host: 'mq',
-  port: 6379
-}));
+// io.adapter(redisAdapter({
+//   host: 'mq',
+//   port: 6379
+// }));
 
-const sioc = require('socket.io-client');
 
-const api = sioc('stevejobs:5051');
 
 api.on('connection', (socket) => {
     console.log('API connected');
@@ -71,6 +71,9 @@ io.on('connection', (socket) => {
   });
 
   io.emit('log', 'User with Session ID: ' + socket.id + ' has connected.');
+  
+  console.log(api);
+  
   api.emit('log', 'User with Session ID: ' + socket.id + ' has connected.');
   /* TASK CODE */
 
