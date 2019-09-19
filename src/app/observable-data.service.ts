@@ -105,9 +105,9 @@ export class ObservableDataService {
     console.log('Requesting listing of Projects.');
     this.socket.emit('list_datapath', {});
     return Observable.create((observer) => {
-      console.log('Got listing back.');
-
+      
       this.socket.on('datapath_list', (data) => {
+      console.log('Got listing back.');
         console.log(data);
         observer.next(data);
       });

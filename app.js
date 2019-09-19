@@ -300,6 +300,8 @@ io.on('connection', (socket) => {
   });
 
   socket.on('list_datapath', (data) => {
+  
+    console.log('Sending datapath list request to python');
     api.emit('list_datapath', data);
 
     api.on('datapath_list', (data) => {
