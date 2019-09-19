@@ -8,22 +8,28 @@ import { SessionLogService } from '../../../session-log.service';
 })
 export class ImportTaskCollectionComponent implements OnInit {
 
-  log: string;
+  log: string = "Log begins";
   log_subscription;
   log_entries: Queue<string>;
-  log_limit = 50;  // Last 50 messages only
+  log_limit:number = 50;  // Last 50 messages only
 
-  constructor(private session: SessionLogService) { }
+  constructor(private session: SessionLogService) {
+    this.log_entries = new Queue<string>();
+  }
 
   ngOnInit() {
     this.log_subscription = this.session.getLog().subscribe((data) => {
+      console.log(data);
+
       if(this.log_entries.length() > this.log_limit) {
         this.log_entries.pop();
       }
       this.log_entries.push(data);
+      this.refresh();
     });
-    for (let n in new Array(60)) {
-      this.session.log('Test: ' + n);
+    for(let i=0; i<100; i++) {
+      this.session.log('Test: ' + i);
+      
     }
   }
 
@@ -34,7 +40,9 @@ export class ImportTaskCollectionComponent implements OnInit {
 }
 
 export class Queue<T> {
+
   _store: T[] = [];
+
   push(val: T) {
     this._store.push(val);
   }
@@ -42,7 +50,7 @@ export class Queue<T> {
     return this._store.shift();
   }
   asArray() {
-    return new Array(this._store);
+    return this._store;
   }
   length() {
     return this._store.length;

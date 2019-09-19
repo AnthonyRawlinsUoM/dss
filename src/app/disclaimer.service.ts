@@ -16,8 +16,6 @@ export class DisclaimerService implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.store.createContainer('PBA_disclaimer_acknowledgement', StorageType.LOCAL);
-
     this.acknowledged = this.cookieJar.get('DSS_disclaimer');
   }
 

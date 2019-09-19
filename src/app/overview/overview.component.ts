@@ -33,17 +33,16 @@ export class OverviewComponent implements OnInit {
 
 
   dataRefresh() {
-    // this.chart_data = flatten(this.projects
-    //   .map(p => p.metrics
-    //     .filter((m) => {
-    //       if (m && m.active) {
-    //         return m.metric;
-    //       }
-    //     })
-    //   )
-    // );
+    this.chart_data = flatten(this.projects
+      .map(p => p.metrics
+        .filter((m) => {
+          if (m && m.active) {
+            return m.metric;
+          }
+        })
+      )
+    );
     console.log(this.chart_data);
-    // this.testData();
   }
 
 }
