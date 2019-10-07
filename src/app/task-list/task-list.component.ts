@@ -4,7 +4,7 @@ import { ObservableDataService } from '../observable-data.service';
 import { SortDirection } from '../sort-direction';
 import { Task } from '../task';
 
-import * as moment from 'moment';
+import moment from 'moment';
 
 @Component({
   selector: 'app-task-list',

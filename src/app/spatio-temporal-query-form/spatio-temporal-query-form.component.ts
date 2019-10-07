@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpatioTemporalQuery } from '../spatio-temporal-query';
 import { ObservableDataService } from '../observable-data.service';
-import * as moment from 'moment';
+import moment from 'moment';
 
 @Component({
   selector: 'app-spatio-temporal-query-form',

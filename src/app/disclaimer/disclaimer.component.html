@@ -1,9 +1,8 @@
 <sui-modal
 *ngIf="!disclaim.noticed()"
-    [isClosable]="true"
     [isFullScreen]="true"
     [size]="small"
-    [isBasic]="true"
+    [suiTransition]="transitionController"
     #modal
 >
   <h1 class="header">Disclaimer</h1>

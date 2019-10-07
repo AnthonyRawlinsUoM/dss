@@ -2,5 +2,28 @@
     [style]="'mapbox://styles/mapbox/streets-v9'"
     [zoom]="[6.5]"
     [center]="[145.20, -36.5]"
+    #mapview
   >
+
+  <mgl-control
+       mglNavigation
+       position="top-right"
+     ></mgl-control>
+     <mgl-control
+       mglScale
+       unit="metric"
+       position="top-right"
+     ></mgl-control>
+    <mgl-geojson-source
+        id="study-source"
+        [data]="studyarea"
+    >
+      <mgl-feature
+          *ngFor="let g of studyarea.features"
+          [geometry]="g.geometry"
+          properties="g.properties"
+          id="g.id"
+      ></mgl-feature>
+    </mgl-geojson-source>
+
   </mgl-map>

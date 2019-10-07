@@ -242,8 +242,8 @@
 
 /*jqxChart Style*/
 .jqx-chart-axis-text,
-.jqx-chart-label-text, 
-.jqx-chart-tooltip-text, 
+.jqx-chart-label-text,
+.jqx-chart-tooltip-text,
 .jqx-chart-legend-text
 {
     fill: #EEEEEE !important;
@@ -281,12 +281,22 @@
     display: table;
 }
 
-.ui.dimmer>.content>* {
+/* .ui.dimmer>.content>* {
     display: table-cell;
     vertical-align: middle;
     color: #fff;
-}
+} */
 
 .ui.inverted.dimmer>.content>* {
     color: #000;
+}
+
+.ui.modal {
+  top: 25% !important;
+}
+
+.ui.fullscreen.modal {
+  width: 50% !important;
+  margin-left: auto;
+  margin-right: auto;
 }
